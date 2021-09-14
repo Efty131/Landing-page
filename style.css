@@ -1,20 +1,23 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
-section{
+
+section {
     position: relative;
     width: 100%;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     padding: 100px;
     justify-content: space-between;
     align-items: center;
     background: #fff;
+    cursor: url(img/cursor.png), auto;
 }
-header{
+
+header {
     position: absolute;
     top: 0;
     left: 0;
@@ -24,50 +27,60 @@ header{
     align-items: center;
     justify-content: space-between;
 }
-header .logo{
+
+header .logo {
     position: relative;
     max-width: 80px;
 }
-header ul{
+
+header ul {
     position: relative;
     display: flex;
 }
-header ul li{
+
+header ul li {
     list-style: none;
 }
-header ul li a{
+
+header ul li a {
     display: inline-block;
     color: #333;
     font-weight: 400;
     margin-left: 40px;
     text-decoration: none;
 }
-.content{
+
+.content {
     position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.content .textbox{
+
+.content .textbox {
     position: relative;
     max-width: 600px;
 }
-.textbox h2{
+
+.textbox h2 {
     font-size: 4em;
     line-height: 1.4 em;
     font-weight: 700;
     text-transform: capitalize;
 }
-.textbox h2 span{
+
+.textbox h2 span {
     color: #017143;
     font-size: 1.2em;
     font-weight: 900;
 }
-.textbox p{
+
+.textbox p {
     color: #333;
 }
-.textbox a{
+
+.textbox a {
     display: inline-block;
     margin-top: 20px;
     padding: 8px 20px;
@@ -77,38 +90,47 @@ header ul li a{
     border-radius: 40px;
     letter-spacing: 1px;
     font-weight: 500;
+    cursor: url(img/hover.png), auto;
 }
-.imgbox{
+
+.imgbox {
     width: 600px;
     display: flex;
     justify-content: flex-end;
     padding-right: 50px;
     margin-top: 50px;
 }
-.content .imgbox img{
+
+.content .imgbox img {
     max-width: 340px;
 }
-.thumb{
+
+.thumb {
     position: absolute;
     left: 50%;
     bottom: 20px;
     transform: translateX(-50%);
     display: flex;
 }
-.thumb li{
+
+.thumb li {
     list-style: none;
     display: inline-block;
     margin: 0 20px;
     cursor: pointer;
     transition: 0.5s;
 }
-.thumb li:hover{
+
+.thumb li:hover {
     transform: translateY(-25px);
+    cursor: url(img/hover.png), auto;
 }
-.thumb li img{
+
+.thumb li img {
     max-width: 60px;
 }
-.icons{
+
+.icons {
     position: absolute;
     top: 50%;
     right: 30px;
@@ -118,18 +140,21 @@ header ul li a{
     align-items: center;
     flex-direction: column;
 }
-.icons li{
-     list-style: none;
-     cursor: pointer;
-     margin: 5px;
+
+.icons li {
+    list-style: none;
+    cursor: pointer;
+    margin: 5px;
 }
-.icons li img{
+
+.icons li img {
     display: inline-block;
     margin: 5px 0;
     transform: scale(0.6);
     filter: invert(1);
 }
-.circle{
+
+.circle {
     position: absolute;
     top: 0;
     left: 0;
@@ -137,4 +162,96 @@ header ul li a{
     height: 100%;
     background: #017143;
     clip-path: circle(600px at right 800px);
+}
+
+@media (max-width: 991px) {
+    header {
+        padding: 20px;
+    }
+
+    header.logo {
+        max-width: 60px;
+    }
+
+    header ul {
+        display: none;
+    }
+
+    .toggle {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        background: url("img/menu.png");
+        background-size: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+        filter: invert(1);
+        z-index: 11;
+    }
+
+    .toggle .active {
+        background: url("img/close.png");
+        background-size: 25px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+
+    header ul .navigation .active {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        background: #fff;
+        z-index: 10;
+
+    }
+
+    section {
+        padding: 20px 20px 120px;
+    }
+
+    .content {
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    .content .textbox h2 {
+        font-size: 1.2em;
+        margin-bottom: 15px;
+    }
+
+    .content .textbox {
+        max-width: 100%;
+    }
+
+    .content .imgbox {
+        max-width: 100%;
+        justify-content: center;
+    }
+
+    .content .imgbox img {
+        max-width: 300px;
+    }
+
+    .thumb li img {
+        max-width: 40px;
+    }
+
+    .circle {
+        position: absolute;
+        clip-path: circle(400px at center bottom);
+    }
+
+    .icons {
+        background: #017143;
+        right: 0;
+        width: 50px;
+        border-radius: 10px;
+    }
 }
