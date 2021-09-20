@@ -9,13 +9,12 @@ function circleColor(color) {
 
 //NAVBAR
 
-function toggleMenu(){
-    var menuToggle = document.querySelector(`.toggle`);
-    var navigation = document.querySelector(`.navigation`)
-    menuToggle.classList.toggle(`active`)
-    navigation
-    .classList.toggle(`active`)
-}
+const toggleButton = document.getElementsByClassName('toggle-button')[0]
+const navberLinks = document.getElementsByClassName('navbar-links')[0]
+
+toggleButton.addEventListener('click', () => {
+    navberLinks.classList.toggle('active')
+})
 
 //DARK MODE
 

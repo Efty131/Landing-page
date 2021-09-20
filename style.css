@@ -17,6 +17,52 @@ section {
     cursor: url(img/cursor.png), auto;
     transition: .5s ease-in-out;
 }
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: green;
+    color: white;
+    z-index: 3;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+.navbar-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.navbar-links li {
+    list-style: none;
+}
+.navbar-links li a{
+    text-decoration: none;
+    color: #fff;
+    padding: 1rem;
+    display: block;
+}
+.navbar-links li:hover{
+    background-color: #555;
+}
+.toggle-button{
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+.toggle-button .bar{
+    height: 3px;
+    width: 100%;
+    background-color: aqua;
+    border-radius: 10px;
+}
 button{
     background-color: aqua;
     color: #000;
@@ -34,28 +80,6 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-header .logo {
-    position: relative;
-    max-width: 80px;
-}
-
-header ul {
-    position: relative;
-    display: flex;
-}
-
-header ul li {
-    list-style: none;
-}
-
-header ul li a {
-    display: inline-block;
-    color: #333;
-    font-weight: 400;
-    margin-left: 40px;
-    text-decoration: none;
 }
 
 .content {
@@ -188,39 +212,26 @@ header ul li a {
         display: none;
     }
 
-    .toggle {
-        position: relative;
-        width: 30px;
-        height: 30px;
-        cursor: pointer;
-        background: url("img/menu.png");
-        background-size: 30px;
-        background-position: center;
-        background-repeat: no-repeat;
-        filter: invert(1);
-        z-index: 11;
-    }
-
-    .toggle .active {
-        background: url("img/close.png");
-        background-size: 25px;
-        background-position: center;
-        background-repeat: no-repeat;
-    }
-
-    header ul .navigation .active {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
+    .toggle-button{
         display: flex;
-        justify-content: center;
-        align-items: center;
+    }
+    .navbar-links{
+        width: 100%;
+        display: none;
+    }
+    .navbar{
         flex-direction: column;
-        background: #fff;
-        z-index: 10;
-
+        align-items: flex-start;
+    }
+    .navbar-links ul{
+        width: 100%;
+        flex-direction: column;
+    }
+    .navbar-links li{
+        text-align: center;
+    }
+    .navbar-links.active{
+        display: flex;
     }
 
     section {
